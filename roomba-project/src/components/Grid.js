@@ -1,11 +1,16 @@
 import React from "react";
 
-function Grid() {
+function renderGrid(num) {
   const newGrid = [];
-  for (let i = 0; i < 10; i++) {
-    newGrid.push(<div className="square">{i}</div>);
+  for (let i = 1; i <= num; i++) {
+    newGrid.push(
+      <div className="square" key={i}>
+        {i}
+      </div>
+    );
   }
+  console.log("grid rendered");
   return newGrid;
 }
 
-export default Grid;
+export default renderGrid;

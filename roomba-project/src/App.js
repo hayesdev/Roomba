@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Directions from "./components/Directions";
 import Location from "./components/Location";
-import Grid from "./components/Grid";
+import renderGrid from "./components/Grid";
 import "./App.css";
 
 function App() {
@@ -12,7 +12,18 @@ function App() {
     <div>
       <Directions />
       <Location />
-      <Grid />
+
+      <div className="grid">{renderGrid(100)}</div>
+
+      {/* <div className="grid">{renderGrid(10)}</div>
+      <div className="grid">{renderGrid(10)}</div>
+      <div className="grid">{renderGrid(10)}</div>
+      <div className="grid">{renderGrid(10)}</div>
+      <div className="grid">{renderGrid(10)}</div>
+      <div className="grid">{renderGrid(10)}</div>
+      <div className="grid">{renderGrid(10)}</div>
+      <div className="grid">{renderGrid(10)}</div>
+      <div className="grid">{renderGrid(10)}</div> */}
     </div>
   );
 }

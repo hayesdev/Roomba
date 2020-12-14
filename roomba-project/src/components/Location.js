@@ -8,7 +8,11 @@ function Location() {
   //       </div>;
   //     }
   //   };
-  return <div>grid will go here</div>;
+  return (
+    <div>
+      <h2>Here is our grid!</h2>
+    </div>
+  );
 }
 
 export default Location;
