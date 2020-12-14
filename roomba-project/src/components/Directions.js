@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function Directions() {
-  const [direction, setDirection] = useState(["North"]);
+  const [direction, setDirection] = useState("North");
 
   return (
     <div>
