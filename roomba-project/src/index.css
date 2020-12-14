@@ -20,6 +20,14 @@ code {
   align-items: center;
 }
 
+.square:hover {
+  background-color: lightskyblue;
+}
+
+.clicked {
+  background-color: red;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
