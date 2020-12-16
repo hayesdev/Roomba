@@ -5,14 +5,19 @@ function Location() {
   const [location, setLocation] = useState({
     coordinates: ["1,1"],
   });
-  // const x = e.target.lat_id;
-  // const y = e.target.long_id;
-  // console.log(x, y);
+
+  function handleChange(e) {
+    const id = e.target.id;
+    setLocation({
+      coordinates: [id],
+    });
+  }
 
   return (
     <div>
       <h1>Coordinates [{location.coordinates}]</h1>
       <br />
+      <Grid handleChange={handleChange} />
     </div>
   );
 }
