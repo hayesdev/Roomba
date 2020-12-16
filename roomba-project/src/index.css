@@ -12,6 +12,21 @@ code {
     monospace;
 }
 
+.directions {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  justify-content: center;
+  align-content: center;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 320px;
+  height: 320px;
+  justify-content: center;
+  align-items: center;
+}
 .square {
   width: 30px;
   height: 30px;
@@ -24,15 +39,10 @@ code {
   background-color: lightskyblue;
 }
 
-.clicked {
-  background-color: red;
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  width: 320px;
-  height: 320px;
+.roomba {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
   justify-content: center;
   align-items: center;
 }

@@ -4,7 +4,7 @@ function Directions() {
   const [direction, setDirection] = useState("North");
 
   return (
-    <div>
+    <div className="directions">
       <button onClick={() => setDirection("North")}>North</button>
       <button onClick={() => setDirection("East")}>East</button>
       <button onClick={() => setDirection("South")}>South</button>

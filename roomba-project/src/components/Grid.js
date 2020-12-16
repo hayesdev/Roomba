@@ -1,21 +1,27 @@
 import React from "react";
+// import Roomba from "./Roomba";
 
-function renderGrid(num) {
-  function handleClick() {
-    const clickedSquare = document.getElementById("clicked");
-
-    clickedSquare.classList.toggle("clicked");
+function Grid() {
+  function handleChange(e) {
+    const id = e.target;
+    console.log(id);
   }
-  const newGrid = [];
-  for (let i = 1; i <= num; i++) {
-    newGrid.push(
-      <div className="square" key={i} id="clicked" onClick={handleClick}>
-        {/* {i} */}
-      </div>
-    );
+  const grid = [];
+  for (let i = 1; i <= 10; i++) {
+    for (let j = 1; j <= 10; j++) {
+      grid.push(
+        <div
+          className="square"
+          id={`${i}, ${j}`}
+          key={`${i}, ${j}`}
+          onClick={handleChange}
+        >
+          {console.log("square rendered")}
+        </div>
+      );
+    }
   }
-  console.log("grid rendered");
-  return newGrid;
+  return <div className="grid">{grid}</div>;
 }
 
-export default renderGrid;
+export default Grid;

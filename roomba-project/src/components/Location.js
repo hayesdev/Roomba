@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import Grid from "./Grid";
 
 function Location() {
-  //   const grid = (i) => {
-  //     for (i = 1; i < 11; i++) {
-  //       <div className="grid" id={i}>
-  //         {i}
-  //       </div>;
-  //     }
-  //   };
+  const [location, setLocation] = useState({
+    coordinates: ["1,1"],
+  });
+  // const x = e.target.lat_id;
+  // const y = e.target.long_id;
+  // console.log(x, y);
+
   return (
     <div>
-      <h2>Here is our grid!</h2>
+      <h1>Coordinates [{location.coordinates}]</h1>
+      <br />
     </div>
   );
 }
