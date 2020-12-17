@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Directions() {
+function Directions(props) {
   const [direction, setDirection] = useState("North");
 
   return (

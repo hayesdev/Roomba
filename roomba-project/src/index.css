@@ -12,6 +12,13 @@ code {
     monospace;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
 .directions {
   display: flex;
   flex-direction: column;
