@@ -5,6 +5,7 @@ function Location(props) {
     <div>
       <h1>Coordinates [{`${props.location[0]}, ${props.location[1]}`}]</h1>
       <br />
+      <h2>{props.location[1]}</h2>
     </div>
   );
 }

@@ -7,9 +7,9 @@ function Grid(props) {
       grid.push(
         <div
           className="square"
-          id={`${i}, ${j}`}
+          id={[i, j]}
           key={`${i}, ${j}`}
-          onClick={props.handleChange}
+          // onClick={props.handleChange}
         >
           {console.log("square rendered")}
         </div>

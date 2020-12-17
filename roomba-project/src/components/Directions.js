@@ -2,30 +2,47 @@ import React, { useState, useEffect } from "react";
 
 function Directions(props) {
   const [direction, setDirection] = useState("North");
+  let x = props.location[0];
+  let y = props.location[1];
+  const prevLocation = [x, y];
 
-  const x = props.location[0];
-  const y = props.location[1];
   function North() {
+    if (y === 10) {
+      y = 9;
+      props.move({ coordinates: prevLocation });
+      console.log("Roomba hit a wall");
+    }
     props.move({ coordinates: [x, y + 1] });
     setDirection("North");
-    console.log(props.location);
   }
   function South() {
+    if (y === 1) {
+      y = 2;
+      props.move({ coordinates: prevLocation });
+      console.log("Roomba hit a wall");
+    }
     props.move({ coordinates: [x, y - 1] });
     setDirection("South");
-    console.log(props.location);
   }
   function East() {
+    if (x === 10) {
+      x = 9;
+      props.move({ coordinates: prevLocation });
+      console.log("Roomba hit a wall");
+    }
     props.move({ coordinates: [x + 1, y] });
     setDirection("East");
-    console.log(props.location);
   }
   function West() {
+    if (x === 1) {
+      x = 2;
+      props.move({ coordinates: prevLocation });
+      console.log("Roomba hit a wall");
+    }
     props.move({ coordinates: [x - 1, y] });
     setDirection("West");
-    console.log(props.location);
   }
-
+  const inBounds = (x > 0 || x < 11) && (y > 0 || y < 10);
   return (
     <div className="directions">
       <button onClick={() => North()}>North</button>
