@@ -2,8 +2,8 @@ import React from "react";
 
 function Grid(props) {
   const grid = [];
-  for (let i = 1; i <= 10; i++) {
-    for (let j = 1; j <= 10; j++) {
+  for (let i = 10; i >= 1; i--) {
+    for (let j = 10; j >= 1; j--) {
       grid.push(
         <div
           className="square"

@@ -28,6 +28,7 @@ code {
 }
 .grid {
   display: flex;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   width: 320px;
   height: 320px;

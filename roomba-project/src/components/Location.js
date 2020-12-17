@@ -1,10 +1,9 @@
 import React from "react";
-import Grid from "./Grid";
 
 function Location(props) {
   return (
     <div>
-      <h1>Coordinates [{props.location.coordinates}]</h1>
+      <h1>Coordinates [{`${props.location[0]}, ${props.location[1]}`}]</h1>
       <br />
     </div>
   );

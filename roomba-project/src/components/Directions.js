@@ -3,27 +3,27 @@ import React, { useState, useEffect } from "react";
 function Directions(props) {
   const [direction, setDirection] = useState("North");
 
-  const x = props.location.coordinates[0];
-  const y = props.location.coordinates[1];
+  const x = props.location[0];
+  const y = props.location[1];
   function North() {
-    // setLocation({ coordinates: [x + 1, y] });
+    props.move({ coordinates: [x, y + 1] });
     setDirection("North");
-    console.log(props.location.coordinates);
+    console.log(props.location);
   }
   function South() {
-    // setLocation({ coordinates: [x - 1, y] });
+    props.move({ coordinates: [x, y - 1] });
     setDirection("South");
-    console.log(props.location.coordinates);
+    console.log(props.location);
   }
   function East() {
-    // setLocation({ coordinates: [x, y + 1] });
+    props.move({ coordinates: [x + 1, y] });
     setDirection("East");
-    console.log(props.location.coordinates);
+    console.log(props.location);
   }
   function West() {
-    // setLocation({ coordinates: [x, y - 1] });
+    props.move({ coordinates: [x - 1, y] });
     setDirection("West");
-    console.log(props.location.coordinates);
+    console.log(props.location);
   }
 
   return (

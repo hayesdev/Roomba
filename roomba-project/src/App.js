@@ -7,11 +7,12 @@ import "./App.css";
 
 function App() {
   const [location, setLocation] = useState({
-    coordinates: [`${1}, ${1}`],
+    coordinates: [1, 1],
   });
 
   function handleChange(e) {
     const id = e.target.id;
+
     setLocation({
       coordinates: [id],
     });
@@ -22,8 +23,12 @@ function App() {
 
   return (
     <div className="container">
-      <Directions location={location} handleChange={handleChange} />
-      <Location location={location} />
+      <Directions
+        location={location.coordinates}
+        move={setLocation}
+        handleChange={handleChange}
+      />
+      <Location location={location.coordinates} />
       <Grid handleChange={handleChange} />
     </div>
   );
