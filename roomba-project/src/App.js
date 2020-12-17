@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
   const [location, setLocation] = useState({
-    coordinates: ["1,1"],
+    coordinates: [`${1}, ${1}`],
   });
 
   function handleChange(e) {
