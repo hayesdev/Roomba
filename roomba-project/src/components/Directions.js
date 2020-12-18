@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Movement from "../logic/Movement";
 
 function Directions(props) {
   const [direction, setDirection] = useState("North");
@@ -49,9 +50,7 @@ function Directions(props) {
       <button onClick={() => south()}>South</button>
       <button onClick={() => east()}>East</button>
       <button onClick={() => west()}>West</button>
-      <div>
-        <h1 className="move">{direction}</h1>
-      </div>
+      <h1>{direction}</h1>
     </div>
   );
 }

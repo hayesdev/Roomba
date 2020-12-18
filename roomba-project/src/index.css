@@ -12,11 +12,19 @@ code {
     monospace;
 }
 
+div h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: auto;
+  padding-top: 5px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
 .directions {
@@ -25,19 +33,19 @@ code {
   width: 150px;
   justify-content: center;
   align-content: center;
+  margin-top: 10px;
 }
+
 .grid {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  width: 320px;
-  height: 320px;
-  justify-content: center;
-  align-items: center;
+  width: 420px;
+  height: 420px;
 }
 .square {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   justify-content: center;
   align-items: center;

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Directions from "./components/Directions";
 import Location from "./components/Location";
 import Grid from "./components/Grid";
 import Counter from "./components/Counter";
-// import Roomba from "./components/Roomba";
+import Roomba from "./components/Roomba";
+// import Room from "./Room.json";
 import "./App.css";
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
       <Directions location={location.coordinates} move={setLocation} />
       <Counter location={location.coordinates} />
       <Location location={location.coordinates} />
-      <Grid />
+      <Grid location={location.coordinates}>
+        <Roomba />
+      </Grid>
     </div>
   );
 }

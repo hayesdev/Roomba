@@ -12,7 +12,7 @@ function Counter(props) {
         setCount((prevCount) => prevCount + 1);
         break;
       default:
-        x = 0;
+        x = 1;
     }
   }, [x]);
 
@@ -23,7 +23,7 @@ function Counter(props) {
         setCount((prevCount) => prevCount + 1);
         break;
       default:
-        y = 0;
+        y = 1;
     }
   }, [y]);
 

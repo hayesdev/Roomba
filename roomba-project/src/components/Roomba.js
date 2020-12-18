@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-function Roomba() {
-  const position = useState([]);
+function Roomba(props) {
+  const [position, setPosition] = useState([props.location]);
+
   console.log(position);
   return <div className="roomba">0</div>;
 }

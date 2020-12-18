@@ -6,7 +6,8 @@ function Grid() {
     for (let j = 10; j >= 1; j--) {
       grid.push(
         <div className="square" id={[i, j]} key={`${i}, ${j}`}>
-          {console.log("square rendered")}
+          {/* {`${i}, 
+          ${j}`} */}
         </div>
       );
     }
