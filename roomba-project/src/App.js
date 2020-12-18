@@ -17,9 +17,8 @@ function App() {
       <Directions location={location.coordinates} move={setLocation} />
       <Counter location={location.coordinates} />
       <Location location={location.coordinates} />
-      <Grid location={location.coordinates}>
-        <Roomba />
-      </Grid>
+      <Grid location={location.coordinates} />
+      {/* <Roomba /> */}
     </div>
   );
 }

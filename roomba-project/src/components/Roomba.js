@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-function Roomba(props) {
-  const [position, setPosition] = useState([props.location]);
+function Roomba() {
+  // const [position, setPosition] = useState([1, 1]);
 
-  console.log(position);
-  return <div className="roomba">0</div>;
+  // useEffect(() => {
+  //   setPosition(() => {});
+  // }, [props.location]);
+
+  // function renderRoomba() {
+  //   const roomba = document.getElementById(`${position[0]}, ${position[1]}`);
+  //   // roomba.classList.toggle("roomba");
+  // }
+
+  return <div className="roomba"></div>;
 }
 
 export default Roomba;
