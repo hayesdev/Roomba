@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Counter from "./Counter";
+import React, { useState } from "react";
 
 function Directions(props) {
   const [direction, setDirection] = useState("North");

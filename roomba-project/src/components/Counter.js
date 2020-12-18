@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function Counter(props) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(-2);
   let x = props.location[0];
   let y = props.location[1];
 
