@@ -10,13 +10,14 @@ function App() {
   const [location, setLocation] = useState({
     coordinates: [1, 1],
   });
+  const coordinates = location.coordinates;
 
   return (
     <div className="container">
-      <Directions location={location.coordinates} move={setLocation} />
-      <Counter location={location.coordinates} />
-      <Location location={location.coordinates} />
-      <Grid location={location.coordinates} />
+      <Directions location={coordinates} move={setLocation} />
+      <Counter location={coordinates} />
+      <Location location={coordinates} />
+      <Grid location={coordinates} />
     </div>
   );
 }

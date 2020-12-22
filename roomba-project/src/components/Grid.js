@@ -10,17 +10,14 @@ function Grid(props) {
   useEffect(() => {
     console.log("Im the first position", position);
   }, []);
-  useEffect(
-    () => {
-      if (roomba) {
-        setPosition((newPosition) => (newPosition = props.location));
-        console.log("The new position:", position);
-        renderRoomba.classList.add("roomba");
-      }
-    },
-    [props.position],
-    [roomba]
-  );
+
+  useEffect(() => {
+    if (roomba) {
+      setPosition(props.location);
+      setRoomba(position);
+      console.log("The new position:", position);
+    }
+  }, [props.location]);
   console.log("The roomba is at", roomba);
   console.log("Im the location", position);
 
@@ -35,7 +32,18 @@ function Grid(props) {
     }
   }
 
-  return <div className="grid">{grid}</div>;
+  const updatedGrid = [];
+  grid.map((cell) => {
+    if (renderRoomba) {
+      renderRoomba.classList.add("roomba");
+      updatedGrid.push(cell);
+    } else {
+      updatedGrid.push(cell);
+    }
+    return updatedGrid;
+  });
+  console.log(renderRoomba, roomba);
+  return <div className="grid">{updatedGrid}</div>;
 }
 
 export default Grid;
