@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Movement from "../logic/Movement";
 
 function Directions(props) {
   const [direction, setDirection] = useState("North");
