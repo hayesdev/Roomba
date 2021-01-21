@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 
 function Grid(props) {
   const [position, setPosition] = useState(props.location);
-  const [roomba, setRoomba] = useState([1, 1]);
+  const [prevPosition, setPrevPosition] = useState([1, 1]);
 
   useEffect(() => {
-    setRoomba(position);
+    setPrevPosition(position);
     setPosition(props.location);
   }, [props.location]);
 
@@ -16,10 +16,10 @@ function Grid(props) {
       grid.push(<div className="square" id={[i, j]} key={[i, j]}></div>);
     }
   }
-  const theRoomba = position;
+  // const theRoomba = position;
   // Created a previous position state to remove roomba class
-  const notRoomba = document.getElementById(roomba);
-  const renderRoomba = document.getElementById(theRoomba);
+  const notRoomba = document.getElementById(prevPosition);
+  const roomba = document.getElementById(position);
 
   console.log("Im the current location", props.location);
   console.log("Roomba is at ", notRoomba);
@@ -27,14 +27,13 @@ function Grid(props) {
 
   const updatedGrid = [];
 
-  grid.map((cell, index) => {
-    if (!renderRoomba) {
-      // console.log("I am index ", index, cell);
+  grid.map((cell) => {
+    if (!roomba) {
       updatedGrid.push(cell);
     } else {
-      renderRoomba.classList.add("roomba");
+      roomba.classList.add("roomba");
       if (notRoomba) {
-        // adding a nested if lets access the previos position
+        // adding a nested if lets access the previous position
         // to remove the roomba class
         notRoomba.classList.remove("roomba");
       }
