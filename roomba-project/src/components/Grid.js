@@ -2,47 +2,47 @@ import React, { useState, useEffect } from "react";
 
 function Grid(props) {
   const [position, setPosition] = useState(props.location);
-  const [roomba, setRoomba] = useState("1, 1");
-  const renderRoomba = document.getElementById(
-    `${position[0]}, ${position[1]}`
-  );
+  const [roomba, setRoomba] = useState([1, 1]);
 
   useEffect(() => {
-    console.log("Im the first position", position);
-  }, []);
-
-  useEffect(() => {
-    if (roomba) {
-      setPosition(props.location);
-      setRoomba(position);
-      console.log("The new position:", position);
-    }
+    setRoomba(position);
+    setPosition(props.location);
   }, [props.location]);
-  console.log("The roomba is at", roomba);
-  console.log("Im the location", position);
 
   const grid = [];
   for (let i = 10; i >= 1; i--) {
     for (let j = 10; j >= 1; j--) {
-      grid.push(
-        <div className="square" id={`${i}, ${j}`} key={`${i}, ${j}`}>
-          {`${i}, ${j}`}
-        </div>
-      );
+      console.log([i, j]);
+      grid.push(<div className="square" id={[i, j]} key={[i, j]}></div>);
     }
   }
+  const theRoomba = position;
+  // Created a previous position state to remove roomba class
+  const notRoomba = document.getElementById(roomba);
+  const renderRoomba = document.getElementById(theRoomba);
+
+  console.log("Im the current location", props.location);
+  console.log("Roomba is at ", notRoomba);
+  console.log("I am the position ", position);
 
   const updatedGrid = [];
-  grid.map((cell) => {
-    if (renderRoomba) {
-      renderRoomba.classList.add("roomba");
+
+  grid.map((cell, index) => {
+    if (!renderRoomba) {
+      // console.log("I am index ", index, cell);
       updatedGrid.push(cell);
     } else {
+      renderRoomba.classList.add("roomba");
+      if (notRoomba) {
+        // adding a nested if lets access the previos position
+        // to remove the roomba class
+        notRoomba.classList.remove("roomba");
+      }
       updatedGrid.push(cell);
     }
     return updatedGrid;
   });
-  console.log(renderRoomba, roomba);
+
   return <div className="grid">{updatedGrid}</div>;
 }
 
