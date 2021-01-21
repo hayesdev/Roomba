@@ -45,10 +45,46 @@ function Directions(props) {
 
   return (
     <div className="directions">
-      <button onClick={() => north()}>North</button>
-      <button onClick={() => south()}>South</button>
-      <button onClick={() => east()}>East</button>
-      <button onClick={() => west()}>West</button>
+      <button
+        onClick={() => north()}
+        // onKeyDown={(e) => {
+        //   if (e.code === "ArrowUp") {
+        //     north();
+        //   }
+        // }}
+      >
+        North
+      </button>
+      <button
+        onClick={() => south()}
+        // onKeyDown={(e) => {
+        //   if (e.code === "ArrowDown") {
+        //     south();
+        //   }
+        // }}
+      >
+        South
+      </button>
+      <button
+        onClick={() => east()}
+        // onKeyDown={(e) => {
+        //   if (e.code === "ArrowRight") {
+        //     east();
+        //   }
+        // }}
+      >
+        East
+      </button>
+      <button
+        onClick={() => west()}
+        // onKeyDown={(e) => {
+        //   if (e.code === "ArrowLeft") {
+        //     west();
+        //   }
+        // }}
+      >
+        West
+      </button>
       <h1>{direction}</h1>
     </div>
   );

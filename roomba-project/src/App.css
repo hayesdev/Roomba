@@ -30,8 +30,8 @@ div h1 {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  width: 420px;
-  height: 420px;
+  width: 410px;
+  height: 410px;
   border: 1px solid black;
 }
 .square {
@@ -42,9 +42,9 @@ div h1 {
   align-items: center;
 }
 
-.square:hover {
+/* .square:hover {
   background-color: lightskyblue;
-}
+} */
 
 .roomba {
   width: 40px;
